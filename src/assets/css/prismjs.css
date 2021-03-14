@@ -7,12 +7,12 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  */
 
  code {
-  @apply bg-gray-200 dark:bg-gray-800;
+  @apply bg-black;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
-  @apply text-gray-100 bg-transparent whitespace-pre text-left break-normal leading-normal;
+  @apply bg-transparent whitespace-pre text-left break-normal leading-normal;
   word-spacing: normal;
   word-wrap: normal;
   tab-size: 4; 
@@ -26,7 +26,7 @@ pre[class*="language-"] {
 }
 
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
-  @apply bg-gray-800;
+  @apply bg-black;
 }
 
 /* Inline code */
@@ -41,11 +41,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @apply text-gray-400;
+  @apply text-black;
 }
 
 .token.punctuation {
-  @apply text-gray-300;
+  @apply text-black;
 }
 
 .token.tag,
@@ -171,5 +171,5 @@ div.code-toolbar > .toolbar span:focus {
 
 article code {
   font-size: 0.9em;
-  @apply bg-gray-200 dark:bg-gray-700;
+  @apply bg-black;
 }

@@ -10,6 +10,10 @@ module.exports = {
   },
   darkMode: 'media',
   theme: {
+    fontFamily: {
+      sans: ['Raleway', 'sans-serif'],
+      serif: ['Vollkorn', 'serif'],
+    },
     fontWeight: {
       hairline: 100,
       thin: 200,
@@ -23,21 +27,14 @@ module.exports = {
     },
     colors: {
       transparent: 'transparent',
-      white: '#ffffff',
-      black: '#000000',
-      gray: colors.gray,
-      yellow: colors.yellow,
-      blue: {
-        '100': '#bbeeff',
-        '200': '#00aaff',
-        '300': '#0088ff',
-        '400': '#0033ff',
-        '500': '#0000ff',
-        '600': '#0000bb',
-        '700': '#0000aa',
-        '800': '#000088',
-        '900': '#000066',
-      },
+      purple: colors.purple,
+      gray: colors.trueGray,
+      black: '#14110fff',
+      white: '#f3f3f4ff',
+      jet: '#34312dff',
+      grayWeb: '#7e7f83ff',
+      almond: '#d9c5b2ff',
+
     },
   },
   variants: {},
