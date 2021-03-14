@@ -321,3 +321,85 @@ footer {
   visibility: hidden;
 }
 /* end of CSS from vanilla-lazyload */
+
+.has-line-on-right,
+.has-line-around {
+  display: flex;
+}
+
+.has-line-around {
+  position: relative;
+  justify-content: center;
+
+  @media (max-width: theme("screens.sm")) {
+    padding-top: theme("spacing.5");
+  }
+}
+
+/* ----- the line ------- */
+.has-line-around:before {
+  @media (max-width: theme("screens.sm")) {
+    content: "";
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    width: 50%;
+    border-bottom: solid 1px;
+    color: theme("colors.black");
+  }
+
+  @media screen and (min-width: theme("screens.md")) {
+    margin-right: theme("spacing.3");
+    margin-left: 0;
+  }
+}
+
+.has-line-around:before,
+.has-line-around:after,
+.has-line-on-right:before {
+  @media (min-width: theme("screens.md")) {
+    content: "";
+    border-bottom: solid 1px;
+    color: theme("colors.black");
+  }
+}
+
+.has-line-on-right.has-no-line-before:before {
+  display: none;
+}
+
+/* -- line on right -------- */
+.has-line-on-right:before {
+  @media (min-width: theme("screens.md")) {
+    margin: auto theme("spacing.3") auto 0;
+    padding-right: theme("spacing.6");
+  }
+}
+
+.has-line-on-right:after {
+  @media screen and (min-width: theme("screens.md")) {
+    content: "";
+    margin: auto 0 auto theme("spacing.3");
+    flex: 1;
+    border-bottom: solid 1px;
+    color: theme("colors.black");
+  }
+}
+
+/* ----- line around ------- */
+.has-line-around:before,
+.has-line-around:after {
+  @media (min-width: theme("screens.md")) {
+    margin-top: auto;
+    margin-bottom: auto;
+    flex: 1;
+  }
+}
+
+.has-line-around:after {
+  @media screen and (min-width: theme("screens.md")) {
+    margin-right: 0;
+    margin-left: theme("spacing.3");
+  }
+}
+
