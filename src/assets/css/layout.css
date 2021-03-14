@@ -41,8 +41,12 @@ pre, code {
   @apply text-xs;
 }
 
+.c-button {
+  @apply py-2 px-4 text-lg rounded-sm tracking-wider bg-pink-600 text-white uppercase no-underline hover:bg-pink-400;
+}
+
 a, a:focus, a:hover, a:active {
-  @apply no-underline border-b border-solid border-black;
+  @apply no-underline;
 }
 
 span.caption {
@@ -55,15 +59,7 @@ span.caption a {
 
 
 a {
-  @apply text-black;
-}
-
-a:focus, a:hover, a:active {
-  @apply text-black;
-}
-
-a:hover {
-  @apply dark:text-black;
+  @apply text-pink-600;
 }
 
 sup a, a.previous, a.next, .footnote-return {
@@ -72,10 +68,6 @@ sup a, a.previous, a.next, .footnote-return {
 
 #nav-toggle:checked + #navMenu {
   @apply block;
-}
-
-a.navborderless {
-  @apply border-b-0;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {

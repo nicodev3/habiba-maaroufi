@@ -29,6 +29,7 @@ module.exports = {
       transparent: 'transparent',
       purple: colors.purple,
       gray: colors.trueGray,
+      pink: colors.pink,
       black: '#14110fff',
       white: '#f3f3f4ff',
       jet: '#34312dff',
