@@ -1,73 +1,74 @@
 {% set fallbackImg = "typewriter-monochrome_2242164_6260x4374.jpg" %}
 {% set eleventyVersion = pkg.devDependencies['@11ty/eleventy'] | replace("^", "") %}
 
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=10"><!-- due to IE 11 issue with TWCSS -->
-    <meta name="generator" content="Eleventy v{{ eleventyVersion }}" />
-           
-    {% if title == "Home page" %}
-      <title>{{ siteparams.siteTitle }}</title>
-      <meta property="og:title" content="{{ siteparams.siteTitle }}" />
-    {% else %}
-      <title>{{ title }} | {{ siteparams.siteTitle }}</title>
-      <meta property="og:title" content="{{ title }} | {{ siteparams.siteTitle }}" />
-    {% endif %}
-    
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=10"><!-- due to IE 11 issue with TWCSS -->
+  <meta name="generator" content="Eleventy v{{ eleventyVersion }}"/>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 
-    <meta property="og:image" content="/images/{% if featured_image %}{{ featured_image }}{% else %}{{ fallbackImg }}{% endif %}" />
+  {% if title == "Home page" %}
+    <title>{{ siteparams.siteTitle }}</title>
+    <meta property="og:title" content="{{ siteparams.siteTitle }}"/>
+  {% else %}
+    <title>{{ title }} | {{ siteparams.siteTitle }}</title>
+    <meta property="og:title" content="{{ title }} | {{ siteparams.siteTitle }}"/>
+  {% endif %}
 
-    {% if title == "Home page" %}
-      <meta name="description" content="{{ siteparams.siteDescription }}" />
-      <meta property="og:description" content="{{ siteparams.siteDescription }}" />
-      <meta property="og:url" content = "{{ siteparams.siteURLforOG }}/" />
-    {% else %}
-      <meta name="description" content="{{ description }}" />
-      <meta property="og:description" content="{{ description }}" />
-      <meta property="og:url" content="{{ siteparams.siteURLforOG }}{{ page.url }}" />
-    {% endif %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Twitter meta -->
-    <meta name="twitter:site" content="@BryceWrayTX">
-    <meta name="twitter:creator" content="@BryceWrayTX">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/images/{% if featured_image %}{{ featured_image }}{% else %}{{ fallbackImg }}{% endif %}" />
-    {% if title != "Home page" %}
-      <meta name="twitter:description" content="{{ description }}" />
-      <meta name="twitter:title" content="{{ title }}" />
-    {% else %}
-      <meta name="twitter:description" content="{{ siteparams.siteDescription }}" />
-      <meta name="twitter:title" content="{{ siteparams.siteTitle }}" />
-    {% endif %}
+  <meta property="og:image" content="/images/{% if featured_image %}{{ featured_image }}{% else %}{{ fallbackImg }}{% endif %}"/>
 
-    <!-- **** BEGINNING, favicons **** -->
+  {% if title == "Home page" %}
+    <meta name="description" content="{{ siteparams.siteDescription }}"/>
+    <meta property="og:description" content="{{ siteparams.siteDescription }}"/>
+    <meta property="og:url" content="{{ siteparams.siteURLforOG }}/"/>
+  {% else %}
+    <meta name="description" content="{{ description }}"/>
+    <meta property="og:description" content="{{ description }}"/>
+    <meta property="og:url" content="{{ siteparams.siteURLforOG }}{{ page.url }}"/>
+  {% endif %}
 
-    <!-- generics -->
-    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+  <!-- Twitter meta -->
+  <meta name="twitter:site" content="@BryceWrayTX">
+  <meta name="twitter:creator" content="@BryceWrayTX">
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="/images/{% if featured_image %}{{ featured_image }}{% else %}{{ fallbackImg }}{% endif %}"/>
+  {% if title != "Home page" %}
+    <meta name="twitter:description" content="{{ description }}"/>
+    <meta name="twitter:title" content="{{ title }}"/>
+  {% else %}
+    <meta name="twitter:description" content="{{ siteparams.siteDescription }}"/>
+    <meta name="twitter:title" content="{{ siteparams.siteTitle }}"/>
+  {% endif %}
 
-    <!-- iOS -->
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="/images/icons/apple-touch-icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="1024x1024" href="/images/icons/apple-icon-1024x1024.png">
+  <!-- **** BEGINNING, favicons **** -->
 
-    <!-- Android -->
-    <link rel="shortcut icon" sizes="196x196" href="/images/icons/favicon-196x196.png">
+  <!-- generics -->
+  <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
 
-    <!-- Windows 8, IE 10 -->
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+  <!-- iOS -->
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="/images/icons/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="/images/icons/apple-icon-1024x1024.png">
 
-    <!-- Windows 8.1 and up, IE 11 -->
-    <meta name="msapplication-config" content="/browserconfig.xml">
+  <!-- Android -->
+  <link rel="shortcut icon" sizes="196x196" href="/images/icons/favicon-196x196.png">
 
-    <!-- **** CONCLUSION, favicons **** -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:500|Vollkorn:400i" rel="stylesheet">
+  <!-- Windows 8, IE 10 -->
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
 
-    <link rel="stylesheet" href="/css/{{ csshash['index.css'] }}" type="text/css" />
-    
-  </head>
+  <!-- Windows 8.1 and up, IE 11 -->
+  <meta name="msapplication-config" content="/browserconfig.xml">
+
+  <!-- **** CONCLUSION, favicons **** -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:500|Vollkorn:400i" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="/css/{{ csshash['index.css'] }}" type="text/css"/>
+
+</head>

@@ -10,6 +10,16 @@ module.exports = {
   },
   darkMode: 'media',
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      }
+    },
     fontFamily: {
       sans: ['Raleway', 'sans-serif'],
       serif: ['Vollkorn', 'serif'],
@@ -31,7 +41,7 @@ module.exports = {
       gray: colors.trueGray,
       pink: colors.pink,
       black: '#14110fff',
-      white: '#f3f3f4ff',
+      white: '#fafafa',
       jet: '#34312dff',
       grayWeb: '#7e7f83ff',
       almond: '#d9c5b2ff',

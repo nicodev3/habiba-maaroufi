@@ -170,7 +170,7 @@ article h1, article h2, article h3, article h4 {
 }
 
 article p, li {
-  @apply text-lg mt-6 mb-6 leading-relaxed;
+  @apply text-lg mt-5 mb-5 leading-relaxed;
 }
 
 article img.containedImage {
@@ -295,7 +295,6 @@ footer {
   font-size: 85%;
   width: 85%;
   max-width: 720px !important;
-  margin-bottom: 0;
   @media screen and (min-width: 900px) {
     width: 40%;
   }
@@ -323,7 +322,8 @@ footer {
 /* end of CSS from vanilla-lazyload */
 
 .has-line-on-right,
-.has-line-around {
+.has-line-around,
+article h2 {
   display: flex;
 }
 
@@ -345,7 +345,7 @@ footer {
     margin: 0 auto;
     width: 50%;
     border-bottom: solid 1px;
-    color: theme("colors.black");
+    color: theme("colors.almond");
   }
 
   @media screen and (min-width: theme("screens.md")) {
@@ -356,33 +356,37 @@ footer {
 
 .has-line-around:before,
 .has-line-around:after,
-.has-line-on-right:before {
+.has-line-on-right:before,
+article h2:before {
   @media (min-width: theme("screens.md")) {
     content: "";
     border-bottom: solid 1px;
-    color: theme("colors.black");
+    color: theme("colors.almond");
   }
 }
 
-.has-line-on-right.has-no-line-before:before {
+.has-line-on-right.has-no-line-before:before,
+article h2:before {
   display: none;
 }
 
 /* -- line on right -------- */
-.has-line-on-right:before {
+.has-line-on-right:before,
+article h2:before {
   @media (min-width: theme("screens.md")) {
     margin: auto theme("spacing.3") auto 0;
     padding-right: theme("spacing.6");
   }
 }
 
-.has-line-on-right:after {
+.has-line-on-right:after,
+article h2:after {
   @media screen and (min-width: theme("screens.md")) {
     content: "";
     margin: auto 0 auto theme("spacing.3");
     flex: 1;
     border-bottom: solid 1px;
-    color: theme("colors.black");
+    color: theme("colors.almond");
   }
 }
 
